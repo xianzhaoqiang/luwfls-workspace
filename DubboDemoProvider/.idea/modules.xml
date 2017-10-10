@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/DubboFilterDemo.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/DubboFilterDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/DubboXmlProvider.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/DubboXmlProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-annotation-provider.iml" filepath="$PROJECT_DIR$/dubbo-annotation-provider.iml" />
+    </modules>
+  </component>
+</project>
