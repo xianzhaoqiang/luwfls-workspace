@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/edu-common-parent.iml" filepath="$PROJECT_DIR$/edu-common-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../edu-demo-mqconsumer/edu-demo-mqconsumer.iml" filepath="$PROJECT_DIR$/../edu-demo-mqconsumer/edu-demo-mqconsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../edu-demo-mqproducer/edu-demo-mqproducer.iml" filepath="$PROJECT_DIR$/../edu-demo-mqproducer/edu-demo-mqproducer.iml" />
+    </modules>
+  </component>
+</project>

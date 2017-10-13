@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="edu-demo-mqproducer:war">
+    <output-path>$PROJECT_DIR$/../edu-demo-mqproducer/target</output-path>
+    <root id="archive" name="edu-demo-mqproducer.war">
+      <element id="artifact" artifact-name="edu-demo-mqproducer:war exploded" />
+    </root>
+  </artifact>
+</component>
