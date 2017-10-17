@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/DubboFilterDemo.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/DubboFilterDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/DubboXmlProvider.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/DubboXmlProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ZKManager/ZKManager.iml" filepath="$PROJECT_DIR$/../ZKManager/ZKManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-annotation-provider.iml" filepath="$PROJECT_DIR$/dubbo-annotation-provider.iml" />
     </modules>
   </component>

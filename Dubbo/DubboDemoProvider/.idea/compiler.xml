@@ -9,12 +9,14 @@
         <module name="dubbo-annotation-provider" />
         <module name="dubbo-provider" />
         <module name="DubboFilterDemo" />
+        <module name="ZKManager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="dubbo-annotation-provider" target="1.8" />
-      <module name="DubboFilterDemo" target="1.8" />
-      <module name="DubboXmlProvider" target="1.8" />
+      <module name="dubbo-annotation-provider" target="1.6" />
+      <module name="DubboFilterDemo" target="1.5" />
+      <module name="DubboXmlProvider" target="1.5" />
+      <module name="ZKManager" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

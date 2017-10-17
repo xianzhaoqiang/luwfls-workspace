@@ -15,10 +15,11 @@
 	<!-- 扫描包 -->
 	<!-- <dubbo:annotation package="com.shangde.*" /> -->
 	<!-- 使用multicast广播注册中心暴露服务地址 -->
-	<dubbo:registry address="zookeeper://172.16.103.33:2181"/>
+	<dubbo:registry address="zookeeper://172.16.103.33:2181" username="luwfls" id="luwfls"  password="luwfls"/>
 	<!-- 用dubbo协议在20881端口暴露服务 -->
 	<dubbo:protocol name="dubbo" port="20881"  />
 	<dubbo:monitor protocol="registry"/>
+
 	<dubbo:service interface="cn.luwfls.demo.dubbo.test.fascade.service.XmlProviderService" ref="xmlProviderService" protocol="dubbo" />
 	<dubbo:service interface="cn.luwfls.demo.dubbo.test.fascade.service.TestService" ref="testService" protocol="dubbo" />
 	<dubbo:service interface="cn.luwfls.demo.dubbo.test.fascade.service.UserService" ref="userService" protocol="dubbo" />
