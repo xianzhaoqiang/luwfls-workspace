@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DubboDemoConsumer/Dubbo-Demo-Consumer.iml" filepath="$PROJECT_DIR$/../DubboDemoConsumer/Dubbo-Demo-Consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/Dubbo-Filter-Demo.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/DubboFilterDemo/Dubbo-Filter-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DubboTestFascade/Dubbo-Test-Fascade.iml" filepath="$PROJECT_DIR$/../DubboTestFascade/Dubbo-Test-Fascade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DubboXmlProvider/Dubbo-Xml-Provider.iml" filepath="$PROJECT_DIR$/../DubboXmlProvider/Dubbo-Xml-Provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZK-Manager.iml" filepath="$PROJECT_DIR$/ZK-Manager.iml" />
+    </modules>
+  </component>
+</project>

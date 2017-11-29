@@ -1,6 +1,4 @@
-import com.alibaba.dubbo.remoting.zookeeper.ZookeeperClient;
 import org.I0Itec.zkclient.ZkClient;
-import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
@@ -18,18 +16,20 @@ import java.util.List;
  * @description zookeeper 管理
  */
 public class ZKManager {
-    private static final String ZKADDRESS = "172.16.103.33:2181";
+    private static final String ZKADDRESS = "172.16.101.130:2190";
     private static final String SUPERAUTH = "super:superpw";
-    private static final String DIGEST = "super:superpw";
+    private static final String LUWFLS = "luwfls:luwfls";
+    private static final String DIGEST = "digest";
 
     private static ZkClient zkClient = new ZkClient(ZKADDRESS);
 
     @Test
     public void testZooKeeperConnect() throws IOException {
         ZooKeeper zooKeeper = new ZooKeeper(ZKADDRESS, 500, watchedEvent -> System.out.println("已经触发了" + watchedEvent.getType() + "事件！"));
-        zooKeeper.addAuthInfo("digest","super:superpw".getBytes());
+        //zooKeeper.addAuthInfo(DIGEST,"super:superpw".getBytes());
         ZooKeeper.States state = zooKeeper.getState();
         System.out.println("状态： "+state);
+
     }
 
     /**
@@ -38,10 +38,25 @@ public class ZKManager {
     @Test
     public void setRootWorldCDRWA() throws Exception {
         ZooKeeper zooKeeper = new ZooKeeper(ZKADDRESS, 500, watchedEvent -> System.out.println("已经触发了" + watchedEvent.getType() + "事件！"));
-        zooKeeper.addAuthInfo("digest","super:superpw".getBytes());
+        zooKeeper.addAuthInfo(DIGEST,SUPERAUTH.getBytes());
         ArrayList<ACL> acls = new ArrayList<>();
         acls.add(new ACL(ZooDefs.Perms.ALL,new Id("world","anyone")));
-        zooKeeper.setACL("/dubbo",acls,1);
+        zooKeeper.setACL("/dubbo",acls,13);
+    }
+
+    /**
+     * 设置IP段 白名单
+     * 有问题 KeeperErrorCode = InvalidACL for /dubbo
+     */
+    @Test
+    public void setIPS() throws Exception{
+        ZooKeeper zooKeeper = new ZooKeeper(ZKADDRESS, 500, watchedEvent -> System.out.println("已经触发了" + watchedEvent.getType() + "事件！"));
+        zooKeeper.addAuthInfo(DIGEST,LUWFLS.getBytes());
+        ArrayList<ACL> acls = new ArrayList<>();
+        acls.add(new ACL(ZooDefs.Perms.ALL,new Id("ip","172.16.103.33")));
+        acls.add(new ACL(ZooDefs.Perms.ALL,new Id("ip","172.16.103.60")));
+        //当前version 可理解为乐观锁的最后一个版本号（屁民理论）
+        zooKeeper.setACL("/test123",acls,zooKeeper.exists("/test123",false).getAversion());
     }
     /**
      * 查询权限
@@ -49,11 +64,26 @@ public class ZKManager {
     @Test
     public void getAcl() throws Exception{
         ZooKeeper zooKeeper = new ZooKeeper(ZKADDRESS, 500, watchedEvent -> System.out.println("已经触发了" + watchedEvent.getType() + "事件！"));
-        zooKeeper.addAuthInfo("digest","super:superpw".getBytes());
-        List<ACL> acl = zooKeeper.getACL("/dubbo", new Stat());
+        zooKeeper.addAuthInfo("digest","luwfls:luwfls".getBytes());
+        ZooKeeper.States state = zooKeeper.getState();
+        System.out.printf("state  " + state);
+        List<ACL> acl = zooKeeper.getACL("/test123", new Stat());
         acl.forEach(acl1 -> System.out.println(acl1));
     }
 
+    /**
+     * 查询 节点版本 version
+     * 更改权限的时候需要设置 当前节点的 可用版本号 Stat.aversion
+     */
+
+    @Test
+    public void queryVersion() throws Exception{
+        ZooKeeper zooKeeper = new ZooKeeper(ZKADDRESS, 500, watchedEvent -> System.out.println("已经触发了" + watchedEvent.getType() + "事件！"));
+        zooKeeper.addAuthInfo("digest","luwfls:luwfls".getBytes());
+        Stat stat = zooKeeper.exists("/dubbo", false);
+        System.out.println(String.format("version %s  cversion %s aversion %s ", stat.getVersion(),stat.getCversion(),stat.getAversion()));
+        System.out.println(stat);
+    }
     /**
      * 创建节点
      */

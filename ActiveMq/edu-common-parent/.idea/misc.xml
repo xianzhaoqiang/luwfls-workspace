@@ -8,6 +8,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../activeMq-xml/pom.xml" />
         <option value="$PROJECT_DIR$/../edu-demo-mqconsumer/pom.xml" />
         <option value="$PROJECT_DIR$/../edu-demo-mqproducer/pom.xml" />
       </list>

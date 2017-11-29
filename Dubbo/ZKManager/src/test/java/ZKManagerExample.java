@@ -45,7 +45,7 @@ public class ZKManagerExample {
             zk.addAuthInfo("digest", "super:superpw".getBytes());
 
             if (zk.exists("/test", true) == null) {
-                System.out.println(zk.create("/test", "ACL测试".getBytes(), acls, CreateMode.PERSISTENT));
+                System.out.println(zk.create("/test1", "ACL测试".getBytes(), acls, CreateMode.PERSISTENT));
             }
         } catch (IOException e) {
             e.printStackTrace();

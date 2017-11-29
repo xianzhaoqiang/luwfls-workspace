@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../activeMq-xml/activeMq.iml" filepath="$PROJECT_DIR$/../activeMq-xml/activeMq.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu-common-parent.iml" filepath="$PROJECT_DIR$/edu-common-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/../edu-demo-mqconsumer/edu-demo-mqconsumer.iml" filepath="$PROJECT_DIR$/../edu-demo-mqconsumer/edu-demo-mqconsumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../edu-demo-mqproducer/edu-demo-mqproducer.iml" filepath="$PROJECT_DIR$/../edu-demo-mqproducer/edu-demo-mqproducer.iml" />
